@@ -20,4 +20,4 @@ run `npm start`
 
 ## 部屬
 
-run `npm run build`
+run `npm run deploy`
