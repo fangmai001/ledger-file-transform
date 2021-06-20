@@ -102,11 +102,13 @@ function Content() {
             >
               清除轉換檔案
             </Button>
-            <a href="/Ahorro_Export_Data_20210601.csv" download="Ahorro_Export_Data_20210601.csv">
+            {/* <img src='ledger-file-transform/test.jpg' /> */}
+            <a href="ledger-file-transform/Ahorro_Export_Data_20210601.csv" download="Ahorro_Export_Data_20210601.csv">
               <Button style={{ margin: '10px' }}>
                 Download example
               </Button>
             </a>
+            <br />
             <Radio.Group onChange={onRadioChange} value={fileStyle}>
               <Radio value="default" disabled>預設</Radio>
               <Radio value="life">區分生活費、餐飲費</Radio>
