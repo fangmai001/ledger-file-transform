@@ -17,6 +17,7 @@ import {
 } from '@ant-design/icons';
 import dayjs from 'dayjs'
 import { parseDataFrame } from '../DataFrame/index'
+import exampleCSV from './Ahorro_Export_Data_20210601.csv'
 
 import './index.css';
 
@@ -37,7 +38,6 @@ function Content() {
 
   const convertDataArr = (textStr) => {
     const textArr = textStr.split(' \r\n')
-    console.log('textStr', textStr.split(' \r\n'))
     let currentIndex = -1
     currentIndex = textArr.indexOf('-- 支出 --')
     if (currentIndex !== -1) {
@@ -104,7 +104,7 @@ function Content() {
               清除轉換檔案
             </Button>
             {/* <img src='/ledger-file-transform/test.jpg' /> */}
-            <a href="/ledger-file-transform/Ahorro_Export_Data_20210601.csv" download="Ahorro_Export_Data_20210601.csv">
+            <a href={exampleCSV} download="Ahorro_Export_Data_20210601.csv">
               <Button style={{ margin: '10px' }}>
                 Download example
               </Button>

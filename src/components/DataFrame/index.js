@@ -71,7 +71,6 @@ export const parseDataFrame = (inputData) => {
     dataArr,
     headerArr,
   )
-  console.log('df', df)
   const dfSize = df.count()
   
   const splitExcel = []
