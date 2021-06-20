@@ -7,6 +7,7 @@ import {
   List,
   Avatar,
   Upload,
+  Radio,
   message,
 } from 'antd';
 import {
@@ -24,6 +25,7 @@ dayjs.locale('zh-tw')
 function Content() {
   const [fileList, setFileList] = useState([])
   const [excelFileArr, setExcelFileArr] = useState([])
+  const [fileStyle, setFileStyle] = useState('life');
 
   // useEffect(() => {
   // })
@@ -62,6 +64,12 @@ function Content() {
     toExcel.saveExcel()
   }
 
+  const onRadioChange = e => {
+    setExcelFileArr([])
+    setFileList([])
+    setFileStyle(e.target.value)
+  }
+
   const colLayout = { xs: 24, sm: 12 }
 
   return (
@@ -92,8 +100,17 @@ function Content() {
                 setFileList([])
               }}
             >
-              清除
+              清除轉換檔案
             </Button>
+            <a href="/Ahorro_Export_Data_20210601.csv" download="Ahorro_Export_Data_20210601.csv">
+              <Button style={{ margin: '10px' }}>
+                Download example
+              </Button>
+            </a>
+            <Radio.Group onChange={onRadioChange} value={fileStyle}>
+              <Radio value="default" disabled>預設</Radio>
+              <Radio value="life">區分生活費、餐飲費</Radio>
+            </Radio.Group>
           </Card>
         </Col>
         <Col {...colLayout}>
