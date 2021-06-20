@@ -37,6 +37,7 @@ function Content() {
 
   const convertDataArr = (textStr) => {
     const textArr = textStr.split(' \r\n')
+    console.log('textStr', textStr.split(' \r\n'))
     let currentIndex = -1
     currentIndex = textArr.indexOf('-- 支出 --')
     if (currentIndex !== -1) {
