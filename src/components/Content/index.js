@@ -37,14 +37,24 @@ function Content() {
   }
 
   const convertDataArr = (textStr) => {
-    const textArr = textStr.split(' \r\n')
+    let splitKey = ''
+    let arrayKay = ''
+    if (textStr.indexOf(' \r\n') !== -1) {
+      splitKey = ' \r\n'
+      arrayKay = '\r\n\r\n-- 收入 --'
+    } else {
+      splitKey = ' \n'
+      arrayKay = '\n\n-- 收入 --'
+    }
+
+    const textArr = textStr.split(splitKey)
     let currentIndex = -1
     currentIndex = textArr.indexOf('-- 支出 --')
     if (currentIndex !== -1) {
       // remove
       textArr.splice(currentIndex, 1)
     }
-    currentIndex = textArr.indexOf('\r\n\r\n-- 收入 --')
+    currentIndex = textArr.indexOf(arrayKay)
     if (currentIndex !== -1) {
       // remove
       textArr.splice(currentIndex)
