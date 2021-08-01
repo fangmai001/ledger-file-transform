@@ -21,3 +21,4 @@ run `npm start`
 ## 部屬
 
 run `npm run deploy`
+這麼做就會一起 git commit -> push
