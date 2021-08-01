@@ -26,7 +26,7 @@ dayjs.locale('zh-tw')
 function Content() {
   const [fileList, setFileList] = useState([])
   const [excelFileArr, setExcelFileArr] = useState([])
-  const [fileStyle, setFileStyle] = useState('life');
+  const [fileStyle, setFileStyle] = useState('life')
 
   // useEffect(() => {
   // })
@@ -65,6 +65,7 @@ function Content() {
 
   const convertExecl = (dataArr) => {
     const newExcelFileArr = parseDataFrame(dataArr)
+    console.log('newExcelFileArr', newExcelFileArr)
 
     setExcelFileArr([
       ...newExcelFileArr,

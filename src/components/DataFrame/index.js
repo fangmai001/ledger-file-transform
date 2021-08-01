@@ -83,7 +83,7 @@ export const parseDataFrame = (inputData) => {
 
   df.sortBy('日期').map((row, index) => {
     const currentDate = dayjs(row.get('日期'))
-    const dataIndex = splitData.findIndex((e) => e.date.month() === currentDate.month())
+    const dataIndex = splitData.findIndex((e) => e.date.format('YYYY-MM') === currentDate.format('YYYY-MM'))
 
     if (dataIndex === -1 || (index + 1) === dfSize) {
       const lastData = splitData[(splitData.length - 1)]
